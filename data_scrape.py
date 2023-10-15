@@ -2,13 +2,11 @@ import argparse
 import time
 import pandas as pd
 import numpy as np
-pd.options.mode.chained_assignment = None  # default='warn'
-import re
-import datetime
+pd.options.mode.chained_assignment = None
 import requests
 from constants import *
 
-def scraper(start_year:int,end_year:int):
+def scraper(start_year:int,end_year:int) -> list:
     years = [x for x in np.arange(start_year,end_year) if x != 2020]
     all_years = []
     for year in years:
